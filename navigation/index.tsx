@@ -16,10 +16,11 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
+import TabOneScreen from '../screens/ChatsScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, MainTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import ChatsScreen from '../screens/ChatsScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -103,7 +104,7 @@ function MainTabNavigator() {
       }}>
       <MainTab.Screen
         name="Camera"
-        component={TabOneScreen}
+        component={TabTwoScreen}
         options={{title: 'camera',
         tabBarIcon: ({ color }) => <Fontisto name="camera" color={color} size={18}/>,
         tabBarLabel: () => null
@@ -111,7 +112,7 @@ function MainTabNavigator() {
       />
       <MainTab.Screen
         name="Chats"
-        component={TabTwoScreen}
+        component={ChatsScreen}
         options={{title: 'Chats'}}
       />
       <MainTab.Screen
